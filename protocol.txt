@@ -1,0 +1,24 @@
+______________________________________________________________
+
+netlify form
+
+add to the form
+<form
+            className="contact-form"
+            name="blog-contact"
+            method="post"
+            netlify-honeypot="bot-field"
+            data-netlify="true"
+            action="/successSubscription"
+          >
+
+
+          and add 2 hidden inputs
+          {/* two hidden inputs for netlify form */}
+            <input type="hidden" name="bot-field" />
+            <input type="hidden" value="blog-contact" />
+
+______________________________________________________________
+
+Using MDX
+
