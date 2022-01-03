@@ -9,7 +9,6 @@ const IndexPage = ({ data }) => {
     allMdx: { nodes: posts },
   } = data
 
-
   return (
     <Layout>
       <Hero showHero />
@@ -29,8 +28,14 @@ export const query = graphql`
           readTime
           slug
           title
+          image {
+            childImageSharp {
+              gatsbyImageData
+            }
+          }
         }
         id
+        excerpt
       }
     }
   }
