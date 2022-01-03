@@ -22,3 +22,9 @@ ______________________________________________________________
 
 Using MDX
 
+We can use full react components in our markdown.
+
+instal gatsby-plugin-mdx @mdx-js/mdx @mdx-js/react
+
+add to gatsby config 
+`gatsby-plugin-mdx`,
