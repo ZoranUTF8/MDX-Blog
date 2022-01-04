@@ -1,6 +1,6 @@
 const path = require('path')
 
-// create pages dynamically
+// create pages dynamically for categories and specific post
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
   const result = await graphql(`
@@ -12,7 +12,9 @@ exports.createPages = async ({ graphql, actions }) => {
           }
         }
       }
-      
+      categories: allMdx {
+        distinct(field: frontmatter___category)
+      }
     }
   `)
 
@@ -25,6 +27,13 @@ exports.createPages = async ({ graphql, actions }) => {
       },
     })
   })
-
-  
+  result.data.categories.distinct.forEach(category => {
+    createPage({
+      path: `/${category}`,
+      component: path.resolve(`src/templates/category-template.js`),
+      context: {
+        category,
+      },
+    })
+  })
 }
