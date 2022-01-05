@@ -5,6 +5,7 @@ import {
   Code,
   Blockquote,
   ExamplePrism,
+  PrismSetup,
 } from './src/components/Complete'
 
 // changes in all pages
@@ -13,7 +14,7 @@ const components = {
   h4: Headings.myH4,
   inlineCode: Code,
   blockquote: Blockquote,
-  pre: ExamplePrism,
+  pre: PrismSetup,
 }
 
 export const wrapMDX = ({ element }) => {
